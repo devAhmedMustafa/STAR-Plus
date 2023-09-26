@@ -34,11 +34,11 @@ public class CollectItems : MonoBehaviour
                 Sword.GetComponent<SwordAttack>().AttackDamage = 5f;
             else if (gameObject.name == "Health")
             {
-                HealthManager.GetComponent<HealthManager>().MaxHealth = 20f;
-                Player.GetComponent<Player>().Health = 20f;
+                HealthManager.GetComponent<HealthManager>().MaxHealth = 35f;
+                Player.GetComponent<Player>().Health = 35f;
             }
 
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 

@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public delegate void PlayerDied();
     public static event PlayerDied PlayerDiedInfo; 
 
-    private float speed = 10f;
+    private float speed = 12f;
     private float moveX, moveY;
     private Vector3 dim;
     private float health;
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        health = 10f;
+        health = 25f;
         _character = transform.Find("green_character").gameObject;
         damageSFX = GetComponent<AudioSource>();
     }

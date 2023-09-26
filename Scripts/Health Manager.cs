@@ -19,7 +19,7 @@ public class HealthManager : MonoBehaviour
 
     void Start()
     {
-        max_heal = 10f;
+        max_heal = 25f;
     }
 
     

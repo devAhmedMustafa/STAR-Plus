@@ -498,8 +498,8 @@ GameObject:
   - component: {fileID: 3027559559953018604}
   - component: {fileID: 3482849619978822737}
   - component: {fileID: 5662245925931540635}
-  - component: {fileID: 8274630464549833484}
   - component: {fileID: 888077690689343419}
+  - component: {fileID: 3562540135544972597}
   m_Layer: 0
   m_Name: ' green_hand_sword'
   m_TagString: Untagged
@@ -608,8 +608,35 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &8274630464549833484
-BoxCollider2D:
+--- !u!50 &888077690689343419
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6088376747003074008}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!60 &3562540135544972597
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -640,7 +667,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0000346452, y: 0.47435492}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -650,36 +677,20 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.15768662, y: 0.47129062}
-  m_EdgeRadius: 0
---- !u!50 &888077690689343419
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6088376747003074008}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.0013084125, y: 0.7866775}
+      - {x: -0.086368255, y: 0.7047105}
+      - {x: -0.08409833, y: 0.24155588}
+      - {x: -0.15059446, y: 0.22358254}
+      - {x: -0.15088756, y: 0.1557425}
+      - {x: -0.04304333, y: 0.15063795}
+      - {x: 0.00017128885, y: 0.15848333}
+      - {x: 0.14102972, y: 0.16160902}
+      - {x: 0.13762313, y: 0.22142215}
+      - {x: 0.07482427, y: 0.24155174}
+      - {x: 0.07607634, y: 0.7062817}
+  m_UseDelaunayMesh: 0
 --- !u!1 &6219225288285688620
 GameObject:
   m_ObjectHideFlags: 0

@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
         Player = GameObject.FindWithTag("Player");
         speed = 4f;
         health = 3f;
-        AreaR = 10f;
+        AreaR = 16f;
         distance = 100f;
         seen = false;
     }
