@@ -9,6 +9,19 @@ public class Boss : MonoBehaviour
 
     private float distance;
     private GameObject Player;
+    private float health;
+    private bool damaged;
+
+    public float Health
+    {
+        get { return health; }
+        set { health = value; }
+    }
+
+    public bool Damaged
+    {
+        set { damaged = value; }
+    }
     
     
     void Start()

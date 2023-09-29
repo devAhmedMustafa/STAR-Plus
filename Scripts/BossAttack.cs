@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class BossAttack : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]
+    private GameObject[] weapons;
+
     void Start()
     {
         

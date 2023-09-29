@@ -43,9 +43,13 @@ public class SwordAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag(ENEMY) && attacking)
+        if (attacking)
         {
-            DamageEnemy(collision, attack_damage);
+            if (collision.gameObject.CompareTag(ENEMY))
+                DamageEnemy(collision, attack_damage);
+            else if (collision.gameObject.CompareTag("Boss"))
+                DamageBoss(collision, attack_damage);
+
         }
     }
 
@@ -54,5 +58,12 @@ public class SwordAttack : MonoBehaviour
         Enemy enemy = collision.gameObject.GetComponent<Enemy>();
         enemy.Health -= damage;
         enemy.Damaged = true;
+    }
+
+    public static void DamageBoss(Collider2D collision, float damage)
+    {
+        Boss boss = collision.gameObject.GetComponent<Boss>();
+        boss.Health -= damage;
+        boss.Damaged = true;
     }
 }
