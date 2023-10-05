@@ -15,7 +15,8 @@ public class Player : MonoBehaviour
     private float health;
     private GameObject _character;
     private bool damaged;
-    private AudioSource damageSFX;
+    [SerializeField]
+    private AudioSource damageSFX, die_sfx;
     private Rigidbody2D rb;
     private bool stable;
 
@@ -137,6 +138,7 @@ public class Player : MonoBehaviour
         if ( health <= 0)
         {
             Destroy(gameObject);
+            die_sfx.Play();
             PlayerDiedInfo?.Invoke();
         }
     }

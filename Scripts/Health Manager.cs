@@ -10,7 +10,10 @@ public class HealthManager : MonoBehaviour
     [SerializeField]
     private Text healthnum;
     private float health;
+    [SerializeField]
     private float max_heal;
+    [SerializeField]
+    private GameObject character;
 
     public float MaxHealth
     {
@@ -19,13 +22,15 @@ public class HealthManager : MonoBehaviour
 
     void Start()
     {
-        max_heal = 25f;
     }
 
     
     void Update()
     {
-        health = GameObject.FindWithTag("Player").GetComponent<Player>().Health;
+        if (character.name == "Player")
+            health = character.GetComponent<Player>().Health;
+        else if (character.name == "Boss")
+            health = character.GetComponent<Boss>().Health;
         healthbar.fillAmount = health / max_heal;
         healthnum.text = health.ToString();
     }

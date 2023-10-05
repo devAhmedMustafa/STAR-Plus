@@ -7,18 +7,25 @@ public class ArrowAttack : MonoBehaviour
 
     [SerializeField]
     private GameObject arrow;
-    private GameObject parent;
     private bool attack;
+    private AudioSource arrow_sfx;
+    public bool Attack
+    {
+        set { attack = value; }
+    }
 
     void Start()
     {
-        parent = transform.parent.gameObject.transform.parent.gameObject;
+        arrow_sfx = GetComponent<AudioSource>();
         StartCoroutine(MakeArrow());
     }
 
     void Update()
     {
-        attack = parent.GetComponent<Enemy>().Attacking;
+        if (attack)
+        {
+            Debug.Log("Attack");
+        }
     }
 
     IEnumerator MakeArrow()
@@ -28,6 +35,7 @@ public class ArrowAttack : MonoBehaviour
             if ( attack )
             {
                 Instantiate(arrow);
+                arrow_sfx.Play();
             }
             yield return new WaitForSeconds(Random.Range(1, 4));
         }

@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour
     private float health;
     private bool damaged;
     private bool attacking;
+    [SerializeField]
+    private AudioSource damage_sfx, die_sfx;
 
     public bool Attacking
     {
@@ -155,6 +157,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            die_sfx.Play();
         }
     }
 
@@ -163,6 +166,7 @@ public class Enemy : MonoBehaviour
         if (damaged)
         {
             _character.GetComponent<SpriteRenderer>().color = Color.red;
+            damage_sfx.Play();
             yield return new WaitForSeconds(0.2f);
             damaged = false;
         }

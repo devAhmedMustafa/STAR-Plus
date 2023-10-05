@@ -15,11 +15,13 @@ public class UIManager : MonoBehaviour
     void OnEnable()
     {
         Player.PlayerDiedInfo += RestartScreenListener;
+        Boss.BossDied += WinScreenListener;
     }
 
     void OnDisable()
     {
         Player.PlayerDiedInfo -= RestartScreenListener;
+        Boss.BossDied -= WinScreenListener;
     }
 
     void Update()
@@ -30,5 +32,10 @@ public class UIManager : MonoBehaviour
     void RestartScreenListener()
     {
         Instantiate(UIs[0]);
+    }
+
+    void WinScreenListener()
+    {
+        Instantiate(UIs[1]);
     }
 }

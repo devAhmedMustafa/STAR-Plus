@@ -10,7 +10,7 @@ public class SwordAttack : MonoBehaviour
     private string Attacking_Animation = "Attacking";
     private string ENEMY = "Enemy";
     private float attack_damage;
-
+    private AudioSource sound;
     public float AttackDamage
     {
         set { attack_damage = value; }
@@ -21,6 +21,7 @@ public class SwordAttack : MonoBehaviour
         attacking = false;
         attack_damage = 1f;
         anim = GetComponent<Animator>();
+        sound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,7 +34,8 @@ public class SwordAttack : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && !attacking)
         {
             attacking = true;
-            anim.SetBool(Attacking_Animation, true);  
+            anim.SetBool(Attacking_Animation, true);
+            sound.Play();
             yield return new WaitForSeconds(0.35f);
             anim.SetBool(Attacking_Animation, false);
             attacking = false;

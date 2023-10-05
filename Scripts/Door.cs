@@ -10,6 +10,9 @@ public class Door : MonoBehaviour
     private Animator anim;
     private readonly string DOOR_ANIMATION = "Open";
 
+    [SerializeField]
+    private AudioSource open_sfx, close_sfx;
+
 
     void Start()
     {
@@ -46,10 +49,12 @@ public class Door : MonoBehaviour
     public void CloseDoor()
     {
         open = false;
+        close_sfx.Play();
     }
 
     public void OpenDoor()
     {
         open = true;
+        open_sfx.Play();
     }
 }

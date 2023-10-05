@@ -12,9 +12,24 @@ public class GameManager : MonoBehaviour
         music.GetComponent<AudioSource>().Play();
     }
 
+    void OnEnable()
+    {
+        BossPhaseManager.BossPhase += StopMusic;
+    }
+
+    void OnDisable()
+    {
+        BossPhaseManager.BossPhase -= StopMusic;
+    }
+
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void StopMusic()
+    {
+        music.GetComponent<AudioSource>().Stop();
     }
 }
