@@ -28781,10 +28781,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Purbe Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 9059476107192189990, guid: 305bd8fd156f109448456d59ebfa5b8e, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

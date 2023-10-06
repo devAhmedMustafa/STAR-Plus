@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour
         CalculateDistance();
         AttackPlayer();
         FollowPlayer();
-        Die(); 
+        StartCoroutine( Die() ); 
     }
 
     void FixedUpdate()
@@ -152,11 +152,13 @@ public class Enemy : MonoBehaviour
 
     }
 
-    void Die()
+    IEnumerator Die()
     {
         if (health <= 0)
         {
             die_sfx.Play();
+            damaged = true;
+            yield return new WaitForSeconds(0.8f);
             Destroy(gameObject);
         }
     }
