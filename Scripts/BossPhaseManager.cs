@@ -9,7 +9,9 @@ public class BossPhaseManager : MonoBehaviour
     public static event BossPhaseDelegate BossPhase;
 
     [SerializeField]
-    private GameObject music, trap;
+    private GameObject music;
+    [SerializeField]
+    private GameObject trap;
     private Boss boss;
     private bool instantiated, played;
 
